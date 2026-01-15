@@ -9,6 +9,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var bottom_right = get_screen_center_position() + (get_viewport_rect().size / 2 / zoom)
+	var top_left = get_screen_center_position() - (get_viewport_rect().size / 2 / zoom)
 	if horizontal_ruler:
-		horizontal_ruler.global_position.y = bottom_right.y - horizontal_ruler.texture.get_height()
+		horizontal_ruler.global_position.y = top_left.y

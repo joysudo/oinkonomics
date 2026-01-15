@@ -48,7 +48,7 @@ radius = 10.440307
 
 [node name="player" type="CharacterBody2D" parent="."]
 z_index = 100
-position = Vector2(0, -48)
+position = Vector2(-176, -200)
 script = ExtResource("2_epypp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
@@ -69,22 +69,128 @@ script = ExtResource("6_ir8iy")
 horizontal_ruler = NodePath("../../HorizontalRuler")
 
 [node name="Sign" parent="." instance=ExtResource("7_d21ai")]
-position = Vector2(-28, 393)
+position = Vector2(12, 368)
 
 [node name="Label" parent="Sign" index="2"]
 text = "You begin in the year 1300. Europe is a deeply unequal, agrarian society. Wealth is concentrated in the hands of the landowning elites (including nobility, clergy, and landlords), and land is the primary source of income and political power. Most peasants are tied to the land through feudal obligations and have little ability to accumulate property or savings. "
 
+[node name="Sign13" parent="Sign" instance=ExtResource("7_d21ai")]
+position = Vector2(7933, -84)
+
+[node name="Label" parent="Sign/Sign13" index="2"]
+custom_minimum_size = Vector2(10, 10)
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -58.0
+offset_top = -154.0
+offset_right = 66.0
+offset_bottom = -70.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "Today, the share of the 
+10% in Europe is about 
+the same as that in Italy 
+immediately before the 
+Black Death. The amount 
+owned by the top 10% is 
+trending upwards."
+autowrap_mode = 0
+metadata/_edit_use_anchors_ = true
+
 [node name="Sign2" parent="." instance=ExtResource("7_d21ai")]
-position = Vector2(180, 264)
+position = Vector2(212, 245)
 
 [node name="Label" parent="Sign2" index="2"]
 text = "Because population pressure is high and labor is abundant, wages stay low. Inequality is self-reinforcing in this period. The top 10% control 60-65% of wealth, leaving the majority of people fighting for the other ~35%."
 
 [node name="Sign3" parent="." instance=ExtResource("7_d21ai")]
-position = Vector2(-28, 393)
+position = Vector2(579, 905)
 
 [node name="Label" parent="Sign3" index="2"]
-text = "You begin in the year 1300. Europe is a deeply unequal, agrarian society. Wealth is concentrated in the hands of the landowning elites (including nobility, clergy, and landlords), and land is the primary source of income and political power. Most peasants are tied to the land through feudal obligations and have little ability to accumulate property or savings. "
+offset_top = -217.0
+offset_right = 137.0
+text = "That drop came from the BLACK DEATH, which killed an estimated 50% of Europe's population. But despite massive mortality, land, tools, and capital survive. This radically increases per-capita wealth among survivors and breaks the labor surplus that had favored elites.
+
+With workers suddenly scarce, both skilled and unskilled laborers gain bargaining power and demand higher wages. Large aristocratic estates become fragmented, making it harder to sustain massive patrimonies. The top 10% lose a significant share of total wealth."
+
+[node name="Sign4" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(1604, 1164)
+
+[node name="Label" parent="Sign4" index="2"]
+text = "By the mid-15th century, Europe's population has begun to recover in some regions. As growth resumes, labor becomes less scarce, weakining workers' bargaining power. 
+At the same time, the AGE OF DISCOVERY opens new opportunities for wealth accumulation through trade, colonization, and state-backed monopolies. These gains disproportionately benefit merchants, nobles, and early elites."
+
+[node name="Sign5" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(2694, 1054)
+
+[node name="Label" parent="Sign5" index="2"]
+text = "Around 1550, the graph begins to reflect the rising inequality driven by the PRICE REVOLUTION. Massive inflows of silver from the Americas cause widespread inflation across Europe, raising prices faster than wages. Debtors, merchants, and entrepreneurs benefit—they can repay loans with devalued currency and pocket the gap between prices and wages. The top 10%'s relative share trends upwards."
+
+[node name="Sign6" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(3855, 428)
+
+[node name="Label" parent="Sign6" index="2"]
+text = "Find something to discuss at this point."
+
+[node name="Sign7" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(5007, -197)
+
+[node name="Label" parent="Sign7" index="2"]
+text = "The INDUSTRIAL REVOLUTION concentrates capital in factories, machines, and infrastructure. The elites owning these assets gain immense power. Workers become easier to replace, becoming wage laborers and losing bargaining power.
+
+Because early industrial governments largely embrace laissez-faire economics, there is little redistribution. The wealth share of the top 10% continues trending upwards."
+
+[node name="Sign8" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(5839, -837)
+
+[node name="Label" parent="Sign8" index="2"]
+text = "As industrialization spreads to continental Europe, the same dynamics repeat on a larger scale. Urbanization creates new working classes, but wages lag behind profits. 
+
+At this point on the graph, the top 10% control 85% of all wealth. That's like leaving nine friends to share one slice of pizza!"
+
+[node name="Sign9" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(6639, -1142)
+
+[node name="Label" parent="Sign9" index="2"]
+text = "World War I marks the beginning of a sharp decline in inequality. Total war destroys physical capital, disrupts trade, and forces governments to raise taxes. It's hard to focus on protecting large fortunes when ordinary citizens are sacrificing their lives. Inflation erodes the value of governmene bonds and savings, which disproportionately harms wealthy asset-holders."
+
+[node name="Sign10" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(6798, -1246)
+
+[node name="Label" parent="Sign10" index="2"]
+offset_left = -36.0
+offset_top = -131.0
+offset_right = 34.0
+offset_bottom = -69.0
+text = "At this point, the top 10% control 90% of Europe's wealth."
+
+[node name="Sign11" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(7580, 546)
+
+[node name="Label" parent="Sign11" index="2"]
+offset_left = -88.0
+offset_top = -184.0
+offset_right = 104.0
+text = "That was a steep fall. Let's recap.
+World War II deepens and extends the equalizing effects of World War I.  Progressive taxation and inheritance taxes expand dramatically to finance the war effort, while the post-WWII decolonization movement depletes a source of wealth. European governments expand welfare states and invest heavily in public goods. These policies prevent wealth from reconcentrating.
+
+At this point, the top 10% own roughly 60% of  wealth. Not quite to the level of post-Black Death, but a big fall!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sign12" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(7791, 382)
+
+[node name="Label" parent="Sign12" index="2"]
+offset_left = -91.0
+offset_top = -177.0
+offset_right = 69.0
+offset_bottom = -71.0
+size_flags_horizontal = 3
+text = "The 1980s saw major political shifts in Europe, marked by the rise of right-wing, free-market policies (think Thatcherism in the UK). Many governments shifted towards deregulation and privatization, allowing more capital to accumulate in the hands of the 10%."
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(3917, 40)
@@ -93,7 +199,7 @@ texture = ExtResource("8_rj586")
 [node name="Hitboxes" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitboxes"]
-polygon = PackedVector2Array(-93, 431, 350, 159, 364, 159, 367, 164, 465, 853, 469, 868, 480, 876, 1593, 1162, 1611, 1163, 2181, 1069, 2726, 1052, 2749, 1047, 3287, 580, 3300, 570, 3875, 429, 5571, -510, 5580, -511, 5583, -505, 3127, 1076, 1638, 1295, 270, 1002)
+polygon = PackedVector2Array(-93, 431, 350, 159, 364, 159, 367, 164, 465, 853, 469, 868, 480, 876, 1593, 1162, 1611, 1163, 2181, 1069, 2726, 1052, 2749, 1047, 3287, 580, 3300, 570, 3875, 429, 5571, -510, 5580, -511, 5583, -505, 3127, 1076, 1638, 1295, 270, 1002, -95, 440)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2(5615, -581)
@@ -108,13 +214,106 @@ position = Vector2(5489, -672)
 shape = SubResource("CircleShape2D_4d7sh")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitboxes"]
-polygon = PackedVector2Array(5545, -740, 5701, -817, 5802, -830, 5819, -829, 6228, -997, 6360, -998, 6376, -1008, 6485, -1090, 6499, -1099, 6686, -1154, 6721, -1174, 6800, -1248, 6813, -1252, 6827, -1236, 7260, -411, 7485, 490, 7491, 508, 7611, 556, 7851, 327, 7863, 319, 7950, 283, 7952, 373, 7628, 624, 7412, 538, 6786, -1098, 5669, -734)
+polygon = PackedVector2Array(5545, -740, 5701, -817, 5802, -830, 5819, -829, 6228, -997, 6360, -998, 6376, -1008, 6485, -1090, 6499, -1099, 6686, -1154, 6721, -1174, 6800, -1248, 6813, -1252, 6827, -1236, 7260, -411, 7485, 490, 7491, 508, 7611, 556, 7851, 327, 7863, 319, 7950, 283, 7952, 373, 7628, 624, 7412, 538, 6786, -1098, 5669, -734, 5539, -733)
 
 [node name="HorizontalRuler" type="Sprite2D" parent="."]
 position = Vector2(-112, 0)
 texture = ExtResource("9_4d7sh")
 centered = false
 
+[node name="Label" type="Label" parent="."]
+offset_left = -135.0
+offset_top = 473.0
+offset_right = -82.0
+offset_bottom = 489.0
+theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "Don't fall!
+Collect all the signs to win."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 441.0
+offset_top = 473.0
+offset_right = 566.0
+offset_bottom = 497.0
+theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "Leap
+of
+faith... "
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 956.0
+offset_top = 978.0
+offset_right = 1081.0
+offset_bottom = 1014.0
+theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "It's a bumpy ride down."
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 4637.0
+offset_top = -36.0
+offset_right = 4762.0
+theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "Keep going!"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 5339.0
+offset_top = -559.0
+offset_right = 5500.0
+offset_bottom = -475.0
+theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "This is where we switch sources. Before 1800, the data averages the Sabaudian State, the Florentine State, and the Kingdom of Naples. We're switching to an average of France, the UK, and Sweden."
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 5538.0
+offset_top = -714.0
+offset_right = 5623.0
+offset_bottom = -675.0
+theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "You're welcome for the boost."
+autowrap_mode = 3
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 6835.0
+offset_top = -1300.0
+offset_right = 6935.0
+offset_bottom = -1261.0
+theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 12
+text = "The next 50 years  go by quickly. 
+(Don't blink.)"
+autowrap_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 16.0
+text = "Signs found: 0"
+
 [editable path="Sign"]
+[editable path="Sign/Sign13"]
 [editable path="Sign2"]
 [editable path="Sign3"]
+[editable path="Sign4"]
+[editable path="Sign5"]
+[editable path="Sign6"]
+[editable path="Sign7"]
+[editable path="Sign8"]
+[editable path="Sign9"]
+[editable path="Sign10"]
+[editable path="Sign11"]
+[editable path="Sign12"]
