@@ -28,6 +28,7 @@ anti_aliasing = false
 script = ExtResource("1_w2mlg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(0, -29)
 texture = ExtResource("1_mbcot")
 

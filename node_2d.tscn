@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bb6sq3778db8b"]
+[gd_scene load_steps=14 format=3 uid="uid://bb6sq3778db8b"]
 
 [ext_resource type="PackedScene" uid="uid://j7gn6p25p40y" path="res://platform.tscn" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://bflj7xnfjxy8m" path="res://player.gd" id="2_epypp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bebe2o5jwyxvt" path="res://images/Pig-3.png" id="5_rj586"]
 [ext_resource type="Texture2D" uid="uid://dyid6ugm1x50g" path="res://images/Pig-4.png" id="6_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://ibxpjqthxbtm" path="res://sign.tscn" id="7_d21ai"]
+[ext_resource type="Texture2D" uid="uid://b6diwtv6kxkk1" path="res://images/inequality_graph.png" id="8_rj586"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e48y"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
@@ -45,10 +46,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_epypp"]
 radius = 23.021729
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4d7sh"]
+radius = 10.440307
+
 [node name="Node2D" type="Node2D"]
 
 [node name="platform" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(141, 584.99994)
+position = Vector2(-1364, 277)
 
 [node name="Sprite2D" parent="platform" index="0"]
 position = Vector2(150.5, 0)
@@ -59,16 +63,17 @@ texture = SubResource("CompressedTexture2D_0e48y")
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="platform1" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(613, 569)
+position = Vector2(-892, 261.00003)
 rotation = -0.32827583
 scale = Vector2(1.24, 1)
 
 [node name="platform2" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(1029, 444)
+position = Vector2(-476, 136)
 scale = Vector2(0.8000049, 1)
 
 [node name="player" type="CharacterBody2D" parent="."]
 z_index = 100
+position = Vector2(0, -48)
 script = ExtResource("2_epypp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
@@ -91,6 +96,30 @@ position = Vector2(383, 522)
 
 [node name="Area2D2" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(845, 421)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3917, 40)
+texture = ExtResource("8_rj586")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-93, 431, 350, 159, 364, 159, 367, 164, 465, 853, 469, 868, 480, 876, 1593, 1162, 1611, 1163, 2181, 1069, 2726, 1052, 2749, 1047, 3287, 580, 3300, 570, 3875, 429, 5571, -510, 5580, -511, 5583, -505, 3127, 1076, 1638, 1295, 270, 1002)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5615, -581)
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5539, -611)
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5489, -672)
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(5545, -740, 5701, -817, 5802, -830, 5819, -829, 6228, -997, 6360, -998, 6376, -1008, 6485, -1090, 6499, -1099, 6686, -1154, 6721, -1174, 6800, -1248, 6813, -1252, 6827, -1236, 7260, -411, 7485, 490, 7491, 508, 7611, 556, 7851, 327, 7863, 319, 7950, 283, 7952, 373, 7628, 624, 7412, 538, 6786, -1098, 5669, -734)
 
 [editable path="platform"]
 [editable path="Area2D"]
