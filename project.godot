@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="oinkonomics"
+run/main_scene="uid://bb6sq3778db8b"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[physics]
+
+2d/default_gravity=2000.0
