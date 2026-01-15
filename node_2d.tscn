@@ -1,19 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://bb6sq3778db8b"]
+[gd_scene load_steps=13 format=3 uid="uid://bb6sq3778db8b"]
 
-[ext_resource type="PackedScene" uid="uid://j7gn6p25p40y" path="res://platform.tscn" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://bflj7xnfjxy8m" path="res://player.gd" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://gcn7r4xa3xyx" path="res://images/Pig-1.png" id="3_kdubu"]
 [ext_resource type="Texture2D" uid="uid://cc3tya386d5dn" path="res://images/Pig-2.png" id="4_d21ai"]
 [ext_resource type="Texture2D" uid="uid://bebe2o5jwyxvt" path="res://images/Pig-3.png" id="5_rj586"]
 [ext_resource type="Texture2D" uid="uid://dyid6ugm1x50g" path="res://images/Pig-4.png" id="6_4d7sh"]
+[ext_resource type="Script" uid="uid://dor7scf2jdeba" path="res://camera_2d.gd" id="6_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://ibxpjqthxbtm" path="res://sign.tscn" id="7_d21ai"]
 [ext_resource type="Texture2D" uid="uid://b6diwtv6kxkk1" path="res://images/inequality_graph.png" id="8_rj586"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e48y"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(585, 126)
+[ext_resource type="Texture2D" uid="uid://cjmyoglyem4h0" path="res://images/inequality_ruler_(horizontal) (1).png" id="9_4d7sh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ir8iy"]
 animations = [{
@@ -51,26 +46,6 @@ radius = 10.440307
 
 [node name="Node2D" type="Node2D"]
 
-[node name="platform" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(-1364, 277)
-
-[node name="Sprite2D" parent="platform" index="0"]
-position = Vector2(150.5, 0)
-scale = Vector2(4.5078125, 1)
-texture = SubResource("CompressedTexture2D_0e48y")
-
-[node name="CollisionShape2D" parent="platform" index="1"]
-shape = SubResource("RectangleShape2D_epypp")
-
-[node name="platform1" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(-892, 261.00003)
-rotation = -0.32827583
-scale = Vector2(1.24, 1)
-
-[node name="platform2" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(-476, 136)
-scale = Vector2(0.8000049, 1)
-
 [node name="player" type="CharacterBody2D" parent="."]
 z_index = 100
 position = Vector2(0, -48)
@@ -85,41 +60,61 @@ animation = &"walk"
 position = Vector2(95, 298)
 shape = SubResource("CircleShape2D_epypp")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" node_paths=PackedStringArray("horizontal_ruler")]
 offset = Vector2(200, 275)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
+script = ExtResource("6_ir8iy")
+horizontal_ruler = NodePath("../../HorizontalRuler")
 
-[node name="Area2D" parent="." instance=ExtResource("7_d21ai")]
-position = Vector2(383, 522)
+[node name="Sign" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(-28, 393)
 
-[node name="Area2D2" parent="." instance=ExtResource("7_d21ai")]
-position = Vector2(845, 421)
+[node name="Label" parent="Sign" index="2"]
+text = "You begin in the year 1300. Europe is a deeply unequal, agrarian society. Wealth is concentrated in the hands of the landowning elites (including nobility, clergy, and landlords), and land is the primary source of income and political power. Most peasants are tied to the land through feudal obligations and have little ability to accumulate property or savings. "
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sign2" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(180, 264)
+
+[node name="Label" parent="Sign2" index="2"]
+text = "Because population pressure is high and labor is abundant, wages stay low. Inequality is self-reinforcing in this period. The top 10% control 60-65% of wealth, leaving the majority of people fighting for the other ~35%."
+
+[node name="Sign3" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(-28, 393)
+
+[node name="Label" parent="Sign3" index="2"]
+text = "You begin in the year 1300. Europe is a deeply unequal, agrarian society. Wealth is concentrated in the hands of the landowning elites (including nobility, clergy, and landlords), and land is the primary source of income and political power. Most peasants are tied to the land through feudal obligations and have little ability to accumulate property or savings. "
+
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(3917, 40)
 texture = ExtResource("8_rj586")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Hitboxes" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitboxes"]
 polygon = PackedVector2Array(-93, 431, 350, 159, 364, 159, 367, 164, 465, 853, 469, 868, 480, 876, 1593, 1162, 1611, 1163, 2181, 1069, 2726, 1052, 2749, 1047, 3287, 580, 3300, 570, 3875, 429, 5571, -510, 5580, -511, 5583, -505, 3127, 1076, 1638, 1295, 270, 1002)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2(5615, -581)
 shape = SubResource("CircleShape2D_4d7sh")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2(5539, -611)
 shape = SubResource("CircleShape2D_4d7sh")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hitboxes"]
 position = Vector2(5489, -672)
 shape = SubResource("CircleShape2D_4d7sh")
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Hitboxes"]
 polygon = PackedVector2Array(5545, -740, 5701, -817, 5802, -830, 5819, -829, 6228, -997, 6360, -998, 6376, -1008, 6485, -1090, 6499, -1099, 6686, -1154, 6721, -1174, 6800, -1248, 6813, -1252, 6827, -1236, 7260, -411, 7485, 490, 7491, 508, 7611, 556, 7851, 327, 7863, 319, 7950, 283, 7952, 373, 7628, 624, 7412, 538, 6786, -1098, 5669, -734)
 
-[editable path="platform"]
-[editable path="Area2D"]
+[node name="HorizontalRuler" type="Sprite2D" parent="."]
+position = Vector2(-112, 0)
+texture = ExtResource("9_4d7sh")
+centered = false
+
+[editable path="Sign"]
+[editable path="Sign2"]
+[editable path="Sign3"]
