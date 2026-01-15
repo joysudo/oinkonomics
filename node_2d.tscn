@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb6sq3778db8b"]
+[gd_scene load_steps=12 format=3 uid="uid://bb6sq3778db8b"]
 
 [ext_resource type="PackedScene" uid="uid://j7gn6p25p40y" path="res://platform.tscn" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://bflj7xnfjxy8m" path="res://player.gd" id="2_epypp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cc3tya386d5dn" path="res://images/Pig-2.png" id="4_d21ai"]
 [ext_resource type="Texture2D" uid="uid://bebe2o5jwyxvt" path="res://images/Pig-3.png" id="5_rj586"]
 [ext_resource type="Texture2D" uid="uid://dyid6ugm1x50g" path="res://images/Pig-4.png" id="6_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://ibxpjqthxbtm" path="res://sign.tscn" id="7_d21ai"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e48y"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
@@ -67,6 +68,7 @@ position = Vector2(1029, 444)
 scale = Vector2(0.8000049, 1)
 
 [node name="player" type="CharacterBody2D" parent="."]
+z_index = 100
 script = ExtResource("2_epypp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
@@ -84,4 +86,11 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
 
+[node name="Area2D" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(383, 522)
+
+[node name="Area2D2" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(845, 421)
+
 [editable path="platform"]
+[editable path="Area2D"]

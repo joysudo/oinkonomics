@@ -24,6 +24,12 @@ window/stretch/scale_mode="integer"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[gui]
+
+theme/default_font_antialiasing=0
+theme/default_font_hinting=0
+theme/custom_font="uid://n6ytxj1m4j8k"
+
 [physics]
 
 2d/default_gravity=2000.0
