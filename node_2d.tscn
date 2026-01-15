@@ -78,4 +78,10 @@ animation = &"walk"
 position = Vector2(95, 298)
 shape = SubResource("CircleShape2D_epypp")
 
+[node name="Camera2D" type="Camera2D" parent="player"]
+offset = Vector2(200, 275)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 30.0
+
 [editable path="platform"]
