@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb6sq3778db8b"]
+[gd_scene load_steps=14 format=3 uid="uid://bb6sq3778db8b"]
 
+[ext_resource type="Script" uid="uid://b4deujv3p1fmh" path="res://node_2d.gd" id="1_ir8iy"]
 [ext_resource type="Script" uid="uid://bflj7xnfjxy8m" path="res://player.gd" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://gcn7r4xa3xyx" path="res://images/Pig-1.png" id="3_kdubu"]
 [ext_resource type="Texture2D" uid="uid://cc3tya386d5dn" path="res://images/Pig-2.png" id="4_d21ai"]
@@ -45,6 +46,7 @@ radius = 23.021729
 radius = 10.440307
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ir8iy")
 
 [node name="player" type="CharacterBody2D" parent="."]
 z_index = 100
@@ -73,32 +75,6 @@ position = Vector2(12, 368)
 
 [node name="Label" parent="Sign" index="2"]
 text = "You begin in the year 1300. Europe is a deeply unequal, agrarian society. Wealth is concentrated in the hands of the landowning elites (including nobility, clergy, and landlords), and land is the primary source of income and political power. Most peasants are tied to the land through feudal obligations and have little ability to accumulate property or savings. "
-
-[node name="Sign13" parent="Sign" instance=ExtResource("7_d21ai")]
-position = Vector2(7933, -84)
-
-[node name="Label" parent="Sign/Sign13" index="2"]
-custom_minimum_size = Vector2(10, 10)
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -58.0
-offset_top = -154.0
-offset_right = 66.0
-offset_bottom = -70.0
-grow_horizontal = 1
-grow_vertical = 1
-text = "Today, the share of the 
-10% in Europe is about 
-the same as that in Italy 
-immediately before the 
-Black Death. The amount 
-owned by the top 10% is 
-trending upwards."
-autowrap_mode = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="Sign2" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(212, 245)
@@ -190,6 +166,32 @@ offset_right = 69.0
 offset_bottom = -71.0
 size_flags_horizontal = 3
 text = "The 1980s saw major political shifts in Europe, marked by the rise of right-wing, free-market policies (think Thatcherism in the UK). Many governments shifted towards deregulation and privatization, allowing more capital to accumulate in the hands of the 10%."
+metadata/_edit_use_anchors_ = true
+
+[node name="Sign13" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(7945, 284)
+
+[node name="Label" parent="Sign13" index="2"]
+custom_minimum_size = Vector2(10, 10)
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -58.0
+offset_top = -154.0
+offset_right = 66.0
+offset_bottom = -70.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "Today, the share of the 
+10% in Europe is about 
+the same as that in Italy 
+immediately before the 
+Black Death. The amount 
+owned by the top 10% is 
+trending upwards."
+autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -299,13 +301,16 @@ autowrap_mode = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 16.0
-text = "Signs found: 0"
+[node name="SignCounter" type="Label" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 155.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+theme_override_font_sizes/font_size = 24
+text = "Signs Found: 0"
 
 [editable path="Sign"]
-[editable path="Sign/Sign13"]
 [editable path="Sign2"]
 [editable path="Sign3"]
 [editable path="Sign4"]
@@ -317,3 +322,4 @@ text = "Signs found: 0"
 [editable path="Sign10"]
 [editable path="Sign11"]
 [editable path="Sign12"]
+[editable path="Sign13"]
