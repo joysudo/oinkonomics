@@ -22,6 +22,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
+	if global_position.y > 1200:
+		global_position = Vector2(100, 100)
+		velocity = Vector2.ZERO
+	
 	if is_on_floor():
 		var target_angle = get_floor_normal().angle() + PI/2
 		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, target_angle, 0.2)

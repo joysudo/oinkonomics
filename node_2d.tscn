@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bb6sq3778db8b"]
+[gd_scene load_steps=15 format=3 uid="uid://bb6sq3778db8b"]
 
 [ext_resource type="Script" uid="uid://b4deujv3p1fmh" path="res://node_2d.gd" id="1_ir8iy"]
 [ext_resource type="Script" uid="uid://bflj7xnfjxy8m" path="res://player.gd" id="2_epypp"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ibxpjqthxbtm" path="res://sign.tscn" id="7_d21ai"]
 [ext_resource type="Texture2D" uid="uid://b6diwtv6kxkk1" path="res://images/inequality_graph.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://cjmyoglyem4h0" path="res://images/inequality_ruler_(horizontal) (1).png" id="9_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://chq8pvker1104" path="res://images/alfanifig1.png" id="11_hqns4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ir8iy"]
 animations = [{
@@ -76,6 +77,18 @@ position = Vector2(12, 368)
 [node name="Label" parent="Sign" index="2"]
 text = "You begin in the year 1300. Europe is a deeply unequal, agrarian society. Wealth is concentrated in the hands of the landowning elites (including nobility, clergy, and landlords), and land is the primary source of income and political power. Most peasants are tied to the land through feudal obligations and have little ability to accumulate property or savings. "
 
+[node name="Sign12" parent="Sign" instance=ExtResource("7_d21ai")]
+position = Vector2(7779, 14)
+
+[node name="Label" parent="Sign/Sign12" index="2"]
+offset_left = -91.0
+offset_top = -177.0
+offset_right = 69.0
+offset_bottom = -71.0
+size_flags_horizontal = 3
+text = "The 1980s saw major political shifts in Europe, marked by the rise of right-wing, free-market policies (think Thatcherism in the UK). Many governments shifted towards deregulation and privatization, allowing more capital to accumulate in the hands of the 10%."
+metadata/_edit_use_anchors_ = true
+
 [node name="Sign2" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(212, 245)
 
@@ -96,8 +109,13 @@ With workers suddenly scarce, both skilled and unskilled laborers gain bargainin
 position = Vector2(1604, 1164)
 
 [node name="Label" parent="Sign4" index="2"]
-text = "By the mid-15th century, Europe's population has begun to recover in some regions. As growth resumes, labor becomes less scarce, weakining workers' bargaining power. 
-At the same time, the AGE OF DISCOVERY opens new opportunities for wealth accumulation through trade, colonization, and state-backed monopolies. These gains disproportionately benefit merchants, nobles, and early elites."
+offset_left = -187.0
+offset_top = -183.0
+offset_right = 195.0
+offset_bottom = -66.0
+text = "In 1450, this data source estimates that the top 10% in Europe controlled only 50% of all wealth. That's the lowest amount of wealth concentration listed in the period from 1300 to present-day!
+
+By the mid-15th century, Europe's population has begun to recover in some regions. As growth resumes, labor becomes less scarce, weakining workers' bargaining power. At the same time, the AGE OF DISCOVERY opens new opportunities for wealth accumulation through trade, colonization, and state-backed monopolies. These gains disproportionately benefit merchants, nobles, and early elites."
 
 [node name="Sign5" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(2694, 1054)
@@ -106,10 +124,10 @@ position = Vector2(2694, 1054)
 text = "Around 1550, the graph begins to reflect the rising inequality driven by the PRICE REVOLUTION. Massive inflows of silver from the Americas cause widespread inflation across Europe, raising prices faster than wages. Debtors, merchants, and entrepreneurs benefit—they can repay loans with devalued currency and pocket the gap between prices and wages. The top 10%'s relative share trends upwards."
 
 [node name="Sign6" parent="." instance=ExtResource("7_d21ai")]
-position = Vector2(3855, 428)
+position = Vector2(3855, 433)
 
 [node name="Label" parent="Sign6" index="2"]
-text = "Find something to discuss at this point."
+text = "Many economists have argued that society will become more equal as time passes and education improves. But by the mid-1600s, population growth and stable political systems allowed elites to rebuild large fortunes. In 1650, the top 10% control 60% of wealth--more than half."
 
 [node name="Sign7" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(5007, -197)
@@ -141,7 +159,7 @@ offset_left = -36.0
 offset_top = -131.0
 offset_right = 34.0
 offset_bottom = -69.0
-text = "At this point, the top 10% control 90% of Europe's wealth."
+text = "At this point, the top 10% control 90% of Europe's wealth—a record high."
 
 [node name="Sign11" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(7580, 546)
@@ -154,18 +172,6 @@ text = "That was a steep fall. Let's recap.
 World War II deepens and extends the equalizing effects of World War I.  Progressive taxation and inheritance taxes expand dramatically to finance the war effort, while the post-WWII decolonization movement depletes a source of wealth. European governments expand welfare states and invest heavily in public goods. These policies prevent wealth from reconcentrating.
 
 At this point, the top 10% own roughly 60% of  wealth. Not quite to the level of post-Black Death, but a big fall!"
-metadata/_edit_use_anchors_ = true
-
-[node name="Sign12" parent="." instance=ExtResource("7_d21ai")]
-position = Vector2(7791, 382)
-
-[node name="Label" parent="Sign12" index="2"]
-offset_left = -91.0
-offset_top = -177.0
-offset_right = 69.0
-offset_bottom = -71.0
-size_flags_horizontal = 3
-text = "The 1980s saw major political shifts in Europe, marked by the rise of right-wing, free-market policies (think Thatcherism in the UK). Many governments shifted towards deregulation and privatization, allowing more capital to accumulate in the hands of the 10%."
 metadata/_edit_use_anchors_ = true
 
 [node name="Sign13" parent="." instance=ExtResource("7_d21ai")]
@@ -231,14 +237,15 @@ offset_bottom = 489.0
 theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 12
-text = "Don't fall!
+text = "Travel through a graph of the top 10%'s 
+wealth in Europe over time. Don't fall!
 Collect all the signs to win."
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 441.0
-offset_top = 473.0
-offset_right = 566.0
-offset_bottom = 497.0
+offset_left = 328.0
+offset_top = 116.0
+offset_right = 453.0
+offset_bottom = 152.0
 theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 12
@@ -247,10 +254,10 @@ of
 faith... "
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 956.0
-offset_top = 978.0
-offset_right = 1081.0
-offset_bottom = 1014.0
+offset_left = 849.0
+offset_top = 1021.0
+offset_right = 974.0
+offset_bottom = 1057.0
 theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 12
@@ -258,8 +265,9 @@ text = "It's a bumpy ride down."
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 4637.0
-offset_top = -36.0
+offset_top = 28.0
 offset_right = 4762.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0.61960787, 0.60784316, 0.6431373, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 12
@@ -309,8 +317,45 @@ offset_bottom = 41.0
 theme_override_colors/font_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
 theme_override_font_sizes/font_size = 24
 text = "Signs Found: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomText" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 72.0
+offset_top = 495.0
+offset_right = 1140.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 24
+text = "This is the real story of wealth inequality over time in Europe.
+See the original graph at https://cepr.org/voxeu/columns/top-rich-europe-long-run-history-1300-present-day."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TopText" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 72.0
+offset_top = 31.0
+offset_right = 1140.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 24
+text = "You beat Oinkonomics... but the story's not over."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -10.68689
+offset_top = -23.0
+offset_right = 1161.0304
+offset_bottom = 702.0
+texture = ExtResource("11_hqns4")
 
 [editable path="Sign"]
+[editable path="Sign/Sign12"]
 [editable path="Sign2"]
 [editable path="Sign3"]
 [editable path="Sign4"]
@@ -321,5 +366,4 @@ text = "Signs Found: 0"
 [editable path="Sign9"]
 [editable path="Sign10"]
 [editable path="Sign11"]
-[editable path="Sign12"]
 [editable path="Sign13"]
