@@ -29,3 +29,4 @@ func finish_game():
 	tween.tween_property($CanvasLayer/BottomText, "modulate:a", 1.0, 2.0).set_delay(4.0)
 	tween.tween_property($CanvasLayer/TopText, "modulate:a", 1.0, 2.0).set_delay(4.0)
 	tween.tween_property($CanvasLayer/TextureRect, "modulate:a", 0.5, 2.0).set_delay(4.0)
+	tween.tween_property($CanvasLayer/TextureRect2, "modulate:a", 0.1, 1.75).set_delay(4.25)

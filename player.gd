@@ -26,15 +26,19 @@ func _physics_process(delta: float) -> void:
 		global_position = Vector2(100, 100)
 		velocity = Vector2.ZERO
 	
+	
+	if direction != 0:
+		$AnimatedSprite2D.flip_h = (direction < 0)
+			
 	if is_on_floor():
 		var target_angle = get_floor_normal().angle() + PI/2
 		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, target_angle, 0.2)
 		if direction != 0:
 			$AnimatedSprite2D.play("walk")
-			$AnimatedSprite2D.flip_h = (direction < 0)
 		else:
 			$AnimatedSprite2D.play("idle")
 	else:
 		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, 0, 0.1)
+		$AnimatedSprite2D.play("jump")
 
 	move_and_slide()

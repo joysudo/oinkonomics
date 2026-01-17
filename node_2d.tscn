@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bb6sq3778db8b"]
+[gd_scene load_steps=17 format=3 uid="uid://bb6sq3778db8b"]
 
 [ext_resource type="Script" uid="uid://b4deujv3p1fmh" path="res://node_2d.gd" id="1_ir8iy"]
 [ext_resource type="Script" uid="uid://bflj7xnfjxy8m" path="res://player.gd" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://gcn7r4xa3xyx" path="res://images/Pig-1.png" id="3_kdubu"]
+[ext_resource type="Texture2D" uid="uid://dm6b03fw25db2" path="res://images/Pig-Jump.png" id="4_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://cc3tya386d5dn" path="res://images/Pig-2.png" id="4_d21ai"]
 [ext_resource type="Texture2D" uid="uid://bebe2o5jwyxvt" path="res://images/Pig-3.png" id="5_rj586"]
 [ext_resource type="Texture2D" uid="uid://dyid6ugm1x50g" path="res://images/Pig-4.png" id="6_4d7sh"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b6diwtv6kxkk1" path="res://images/inequality_graph.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://cjmyoglyem4h0" path="res://images/inequality_ruler_(horizontal) (1).png" id="9_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://chq8pvker1104" path="res://images/alfanifig1.png" id="11_hqns4"]
+[ext_resource type="Texture2D" uid="uid://d11du4yuhqufv" path="res://images/swirls.png" id="12_x0ka3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ir8iy"]
 animations = [{
@@ -20,6 +22,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0h7mo")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -57,7 +67,7 @@ script = ExtResource("2_epypp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 position = Vector2(94, 298)
 sprite_frames = SubResource("SpriteFrames_ir8iy")
-animation = &"walk"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(95, 298)
@@ -353,6 +363,12 @@ offset_top = -23.0
 offset_right = 1161.0304
 offset_bottom = 702.0
 texture = ExtResource("11_hqns4")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_x0ka3")
 
 [editable path="Sign"]
 [editable path="Sign/Sign12"]
